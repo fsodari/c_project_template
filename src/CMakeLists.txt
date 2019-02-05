@@ -20,3 +20,9 @@ install(FILES include/mylib/mylib.h DESTINATION include/mylib)
 install(EXPORT mylib-targets
         FILE mylib-config.cmake
         DESTINATION lib/cmake/mylib)
+
+add_executable(project_name main.c)
+target_include_directories(project_name PUBLIC
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+        )
+target_link_libraries(project_name mylib)

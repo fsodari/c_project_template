@@ -25,5 +25,5 @@ TEST_GROUP(MYLIB)
 
 TEST(MYLIB, test1)
 {
-    FAIL("MYLIB fail");
+    CHECK(dut);
 }
